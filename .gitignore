@@ -1,0 +1,10 @@
+__pycache__/
+.venv/
+downloads/
+*.mp4
+*.webm
+*.mp3
+*.wav
+*.metadata.json
+.env*
+cookies*
