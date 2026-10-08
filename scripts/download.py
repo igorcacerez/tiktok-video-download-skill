@@ -9,7 +9,7 @@ from urllib.parse import urlparse
 
 def validate_url(url):
     parts = urlparse(url)
-    if parts.scheme != 'https' or parts.hostname not in {'www.tiktok.com', 'tiktok.com'}:
+    if parts.scheme != 'https' or parts.hostname not in {'www.tiktok.com', 'tiktok.com'} or parts.username or parts.password or parts.port:
         raise ValueError('Use an HTTPS TikTok video URL.')
     if parts.query or parts.fragment or not re.fullmatch(r'/@[A-Za-z0-9._-]+/video/[0-9]+/?', parts.path):
         raise ValueError('Use a canonical /@user/video/id URL without query parameters.')
